@@ -1,0 +1,30 @@
+:host {
+  background-color: #f1f0f0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.editor {
+  width: 600px;
+  flex-grow: 1;
+  background-color: #fff;
+  border: 1px solid #e4dede;
+  padding: 20px;
+}
+
+.editor span {
+  display: inline-flex;
+}
+
+.editor span.bold {
+  font-weight: bold;
+}
+.editor span.italic {
+  font-style: italic;
+}
+.editor span.underlined {
+  text-decoration: underline;
+}
