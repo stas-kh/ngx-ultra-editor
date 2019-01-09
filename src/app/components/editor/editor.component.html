@@ -1,0 +1,6 @@
+<div class="editor" contenteditable="true">
+  <span
+    *ngFor="let node of editorContent"
+    (dblclick)="setNodeToEdit(node)"
+    ><span [ngClass]="getNodeStyles(node)">{{ node.text }}</span>&nbsp;</span>
+</div>

@@ -1,6 +1,5 @@
 :host {
   background-color: #fff;
-  height: 25px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -8,10 +7,22 @@
 }
 
 .format-actions {
-  width: 200px;
-  margin-right: 400px;
+  width: 600px;
 }
 
 button + button {
   margin-left: 5px;
+}
+
+.format-box.disabled button {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.synonyms-box {
+  padding: 5px 0;
+}
+
+.text-grey {
+  color: silver;
 }

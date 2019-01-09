@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
-export class TextService {
+@Injectable({
+  providedIn: 'root'
+})
+export class TextReceiverService {
   getMockText() {
     return new Promise<string>(function (resolve) {
       resolve('A year ago I was in the audience at a gathering of designers in San Francisco. ' +

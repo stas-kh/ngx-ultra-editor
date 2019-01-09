@@ -1,0 +1,38 @@
+<div class="format-actions">
+  <section class="format-box" [ngClass]="{'disabled': !isNodeSelected}">
+    <button (click)="setStyle('isBold')" class="format-action" type="button"><b>B</b></button>
+    <button (click)="setStyle('isItalic')" class="format-action" type="button"><i>I</i></button>
+    <button (click)="setStyle('isUnderlined')" class="format-action" type="button"><u>U</u></button>
+  </section>
+
+  <section class="synonyms-box">
+    <span *ngIf="synonyms === null && !isLoading; else synonymsAvailable">
+      <i class="text-grey">Once the word is selected you will see the list of synonyms here</i>
+    </span>
+  </section>
+</div>
+
+<ng-template #synonymsAvailable>
+  <section>
+    <span *ngIf="isLoading; else synonymsFound">
+      Loading synonyms...
+    </span>
+  </section>
+</ng-template>
+
+<ng-template #synonymsFound>
+  <span *ngIf="synonyms.length === 0; else synonymsExist">
+    Not found synonyms
+  </span>
+</ng-template>
+
+<ng-template #synonymsExist>
+  <span>
+    Change on:
+    <button
+      *ngFor="let synonym of synonyms"
+      (click)="setStyle('text', synonym.word)">
+      {{ synonym.word }}
+    </button>
+  </span>
+</ng-template>
